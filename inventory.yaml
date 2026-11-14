@@ -1,0 +1,14 @@
+all:
+  children:
+    firewalls:
+      vars:
+        ansible_user: admin
+      children:
+        zentrale:
+          hosts:
+            zen-fw01:
+              ansible_host: 10.0.10.1
+        praxen:
+          hosts:
+            ber-pberg-fw01:
+              ansible_host: 10.21.10.1

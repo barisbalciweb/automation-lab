@@ -1,0 +1,11 @@
+- name: DNS Domain Override fuer rex.lab
+  hosts: firewalls
+  gather_facts: false
+  tasks:
+    - name: rex.lab an den DC weiterleiten
+      pfsensible.core.pfsense_dns_resolver:
+        state: present
+        domainoverrides:
+          - domain: rex.lab
+            ip: 10.0.10.10
+            descr: Active Directory DC
