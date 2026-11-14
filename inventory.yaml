@@ -3,6 +3,7 @@ all:
     firewalls:
       vars:
         ansible_user: admin
+        ansible_ssh_private_key_file: ~/ssh/pfsense
       children:
         zentrale:
           hosts:
